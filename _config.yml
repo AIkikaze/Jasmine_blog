@@ -102,6 +102,6 @@ theme: Apollo
 deploy:
   type: git
   repo: https://github.com/AIkikaze/Alkikaze.github.io.git
-	branch: master
-	message: # 提交信息可以自定义，不填的则默认为提交时间
+  branch: master
+  message: # 提交信息可以自定义，不填的则默认为提交时间
 
