@@ -95,7 +95,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: Apollo
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -104,4 +104,43 @@ deploy:
   repo: https://github.com/AIkikaze/Alkikaze.github.io.git
   branch: master
   message: # 提交信息可以自定义，不填的则默认为提交时间
+
+# markdown-it-plus config 
+markdown_it_plus:
+  highlight: true
+  html: true
+  xhtmlOut: true
+  breaks: true
+  langPrefix:
+  linkify: true
+  typographer:
+  quotes: “”‘’
+  pre_class: highlight
+  plugins:
+    - markdown-it-katex
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-ins
+    - markdown-it-mark
+    - markdown-it-toc-and-anchor
+  anchors:
+    level: 2
+    collisionSuffix: ''           
+    permalink: false              
+    permalinkClass: header-anchor
+    permalinkSide: 'left'
+    permalinkSymbol: ¶
+    case: 0
+    separator: '-'
+
+
+math:
+  engine: katex
+  katex:
+    css: https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css
+    js: https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js
+    config:
+      # KaTeX config
+      throwOnError: false
+      errorColor: "#cc0000"
 
