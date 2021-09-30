@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alkikaze.github.io/Jasmine_blog/categories/index.html</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alkikaze.github.io/Jasmine_blog/tags/index.html</loc>
+    
+    <lastmod>2021-09-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alkikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/</loc>
     
     <lastmod>2021-09-29</lastmod>
@@ -9,9 +23,9 @@
   </url>
   
   <url>
-    <loc>http://alkikaze.github.io/Jasmine_blog/2021/09/27/hello-world/</loc>
+    <loc>http://alkikaze.github.io/Jasmine_blog/2021/09/29/hello-world/</loc>
     
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-09-29</lastmod>
     
   </url>
   
@@ -23,6 +37,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>http://alkikaze.github.io/Jasmine_blog/tags/A-bored-begining/</loc>
+    <lastmod>2021-09-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 
   
