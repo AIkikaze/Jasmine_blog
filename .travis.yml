@@ -31,8 +31,8 @@ env:
 after_script:
   - cd ./public
   - git init
-  - git config user.name "${GIT_NAME}"
-  - git config user.email "${GIT_EMAIL}"
+  - git config user.name "Wenwenziy"
+  - git config user.email "wenwenziy@163.com"
   - git add .
   - git commit -m "TravisCI 自动部署"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
