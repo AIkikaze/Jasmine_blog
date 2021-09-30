@@ -26,7 +26,7 @@ script: # 执行脚本，清除缓存，生成静态文件
 
 env:
   global:
-    - GH_REF: git@github.com:AIkikaze/Jasmine_blog.git
+    - GH_REF: github.com/AIkikaze/Jasmine_blog.git
 
 after_script:
   - cd ./public
