@@ -36,3 +36,4 @@ exo-site@0.0.0 /Users/jasmine/jasmines_blog
 1. `hexo-renderer-markdown-it-plus` 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 `hexo-renderer-marked` 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。
 2. `hexo-browsersync` 这个应该是 hexo 自带的一个插件。如同字面意思，这个插件会在你的`hexo server`启动后，当你进行了任何文件上的更改时，实时地在浏览器端口，重新加载新的内容，帮助你实时编辑并查看效果。
 3. `hexo-deployer-git` 这是一个需要手动安装的插件，可以通过 `hexo deploy --git` 命令帮助将hexo生成的静态文件上传至 github page。
+4. 

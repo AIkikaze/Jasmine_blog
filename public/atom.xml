@@ -6,7 +6,7 @@
   <link href="http://alkikaze.github.io/Jasmine_blog/atom.xml" rel="self"/>
   
   <link href="http://alkikaze.github.io/Jasmine_blog/"/>
-  <updated>2021-09-29T15:53:03.916Z</updated>
+  <updated>2021-09-30T01:49:10.609Z</updated>
   <id>http://alkikaze.github.io/Jasmine_blog/</id>
   
   <author>
@@ -17,34 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://alkikaze.github.io/Jasmine_blog/2021/09/29/hello-world/"/>
-    <id>http://alkikaze.github.io/Jasmine_blog/2021/09/29/hello-world/</id>
-    <published>2021-09-29T15:53:03.916Z</published>
-    <updated>2021-09-29T15:53:03.916Z</updated>
-    
-    <content type="html"><![CDATA[<p>这篇文章来自Hexo官方的示例文档，快速介绍了hexo的几条常用命令，以及详细介绍它们的链接。我的Blog才刚刚上手，暂时还不知道应不应该把它们删掉，于是就放在在这。如果以后，仔细研究清楚这些命令的作用，说不定会在这里做一些补充。</p><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;这篇文章来自Hexo官方的示例文档，快速介绍了hexo的几条常用命令，以及详细介绍它们的链接。我的Blog才刚刚上手，暂时还不知道应不应该把它们删掉，于是就放在在这。如果以后，仔细研究清楚这些命令的作用，说不定会在这里做一些补充。&lt;/p&gt;
-&lt;p&gt;Welcome to &lt;a </summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>my first article</title>
+    <title>My First Article</title>
     <link href="http://alkikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/"/>
     <id>http://alkikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/</id>
     <published>2021-09-26T14:56:04.000Z</published>
-    <updated>2021-09-29T16:05:55.253Z</updated>
+    <updated>2021-09-30T01:49:10.609Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>既然是我博客里的第一篇文章，那我就来摸索一下这里的各种功能好了。</p><p>首先list一下，我的根目录里的npm清单：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">exo-site@0.0.0 /Users/jasmine/jasmines_blog</span><br><span class="line">├── @upupming/hexo-renderer-markdown-it-plus@2.0.2</span><br><span class="line">├── hexo-browsersync@0.3.0</span><br><span class="line">├── hexo-deployer-git@3.0.0</span><br><span class="line">├── hexo-generator-archive@1.0.0</span><br><span class="line">├── hexo-generator-category@1.0.0</span><br><span class="line">├── hexo-generator-feed@3.0.0</span><br><span class="line">├── hexo-generator-index@2.0.0</span><br><span class="line">├── hexo-generator-sitemap@2.1.0</span><br><span class="line">├── hexo-generator-tag@1.0.0</span><br><span class="line">├── hexo-math@4.0.0</span><br><span class="line">├── hexo-renderer-ejs@1.0.0</span><br><span class="line">├── hexo-renderer-jade@0.5.0</span><br><span class="line">├── hexo-renderer-stylus@2.0.1</span><br><span class="line">├── hexo-server@2.0.0</span><br><span class="line">└── hexo@5.4.0</span><br></pre></td></tr></table></figure><ol><li><code>hexo-renderer-markdown-it-plus</code> 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 <code>hexo-renderer-marked</code> 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。</li><li><code>hexo-browsersync</code> 这个应该是 hexo 自带的一个插件。</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>既然是我博客里的第一篇文章，那我就来摸索一下这里的各种功能好了。</p><p>首先list一下，我的根目录里的npm清单：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">exo-site@0.0.0 /Users/jasmine/jasmines_blog</span><br><span class="line">├── @upupming/hexo-renderer-markdown-it-plus@2.0.2</span><br><span class="line">├── hexo-browsersync@0.3.0</span><br><span class="line">├── hexo-deployer-git@3.0.0</span><br><span class="line">├── hexo-generator-archive@1.0.0</span><br><span class="line">├── hexo-generator-category@1.0.0</span><br><span class="line">├── hexo-generator-feed@3.0.0</span><br><span class="line">├── hexo-generator-index@2.0.0</span><br><span class="line">├── hexo-generator-sitemap@2.1.0</span><br><span class="line">├── hexo-generator-tag@1.0.0</span><br><span class="line">├── hexo-math@4.0.0</span><br><span class="line">├── hexo-renderer-ejs@1.0.0</span><br><span class="line">├── hexo-renderer-jade@0.5.0</span><br><span class="line">├── hexo-renderer-stylus@2.0.1</span><br><span class="line">├── hexo-server@2.0.0</span><br><span class="line">└── hexo@5.4.0</span><br></pre></td></tr></table></figure><ol><li><code>hexo-renderer-markdown-it-plus</code> 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 <code>hexo-renderer-marked</code> 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。</li><li><code>hexo-browsersync</code> 这个应该是 hexo 自带的一个插件。如同字面意思，这个插件会在你的<code>hexo server</code>启动后，当你进行了任何文件上的更改时，实时地在浏览器端口，重新加载新的内容，帮助你实时编辑并查看效果。</li><li><code>hexo-deployer-git</code> 这是一个需要手动安装的插件，可以通过 <code>hexo deploy --git</code> 命令帮助将hexo生成的静态文件上传至 github page。</li><li></li></ol>]]></content>
     
     
       
@@ -57,8 +36,29 @@
     
     
     
+    <category term="编程" scheme="http://alkikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="hexo 配置手册" scheme="http://alkikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/"/>
+    
     
     <category term="A bored begining" scheme="http://alkikaze.github.io/Jasmine_blog/tags/A-bored-begining/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://alkikaze.github.io/Jasmine_blog/2021/09/26/hello-world/"/>
+    <id>http://alkikaze.github.io/Jasmine_blog/2021/09/26/hello-world/</id>
+    <published>2021-09-25T16:00:00.000Z</published>
+    <updated>2021-09-29T16:19:28.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章来自Hexo官方的示例文档，快速介绍了hexo的几条常用命令，以及详细介绍它们的链接。我的Blog才刚刚上手，暂时还不知道应不应该把它们删掉，于是就放在在这。如果以后，仔细研究清楚这些命令的作用，说不定会在这里做一些补充。</p><span id="more"></span><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这篇文章来自Hexo官方的示例文档，快速介绍了hexo的几条常用命令，以及详细介绍它们的链接。我的Blog才刚刚上手，暂时还不知道应不应该把它们删掉，于是就放在在这。如果以后，仔细研究清楚这些命令的作用，说不定会在这里做一些补充。&lt;/p&gt;</summary>
+    
+    
+    
     
   </entry>
   
