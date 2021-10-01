@@ -3,11 +3,11 @@
   <title>Jasmine&#39;s Blog</title>
   
   <subtitle>Blogging to Collect Parts of My Life</subtitle>
-  <link href="http://alkikaze.github.io/Jasmine_blog/atom.xml" rel="self"/>
+  <link href="http://aikikaze.github.io/Jasmine_blog/atom.xml" rel="self"/>
   
-  <link href="http://alkikaze.github.io/Jasmine_blog/"/>
-  <updated>2021-09-30T01:49:10.609Z</updated>
-  <id>http://alkikaze.github.io/Jasmine_blog/</id>
+  <link href="http://aikikaze.github.io/Jasmine_blog/"/>
+  <updated>2021-09-30T08:02:08.607Z</updated>
+  <id>http://aikikaze.github.io/Jasmine_blog/</id>
   
   <author>
     <name>wenwenzy</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>My First Article</title>
-    <link href="http://alkikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/"/>
-    <id>http://alkikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/</id>
+    <link href="http://aikikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/"/>
+    <id>http://aikikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/</id>
     <published>2021-09-26T14:56:04.000Z</published>
-    <updated>2021-09-30T01:49:10.609Z</updated>
+    <updated>2021-09-30T08:02:08.607Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>既然是我博客里的第一篇文章，那我就来摸索一下这里的各种功能好了。</p><p>首先list一下，我的根目录里的npm清单：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">exo-site@0.0.0 /Users/jasmine/jasmines_blog</span><br><span class="line">├── @upupming/hexo-renderer-markdown-it-plus@2.0.2</span><br><span class="line">├── hexo-browsersync@0.3.0</span><br><span class="line">├── hexo-deployer-git@3.0.0</span><br><span class="line">├── hexo-generator-archive@1.0.0</span><br><span class="line">├── hexo-generator-category@1.0.0</span><br><span class="line">├── hexo-generator-feed@3.0.0</span><br><span class="line">├── hexo-generator-index@2.0.0</span><br><span class="line">├── hexo-generator-sitemap@2.1.0</span><br><span class="line">├── hexo-generator-tag@1.0.0</span><br><span class="line">├── hexo-math@4.0.0</span><br><span class="line">├── hexo-renderer-ejs@1.0.0</span><br><span class="line">├── hexo-renderer-jade@0.5.0</span><br><span class="line">├── hexo-renderer-stylus@2.0.1</span><br><span class="line">├── hexo-server@2.0.0</span><br><span class="line">└── hexo@5.4.0</span><br></pre></td></tr></table></figure><ol><li><code>hexo-renderer-markdown-it-plus</code> 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 <code>hexo-renderer-marked</code> 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。</li><li><code>hexo-browsersync</code> 这个应该是 hexo 自带的一个插件。如同字面意思，这个插件会在你的<code>hexo server</code>启动后，当你进行了任何文件上的更改时，实时地在浏览器端口，重新加载新的内容，帮助你实时编辑并查看效果。</li><li><code>hexo-deployer-git</code> 这是一个需要手动安装的插件，可以通过 <code>hexo deploy --git</code> 命令帮助将hexo生成的静态文件上传至 github page。</li><li></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>既然是我博客里的第一篇文章，那我就来摸索一下这里的各种功能好了。</p><p>首先list一下，我的根目录里的npm清单：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">exo-site@0.0.0 /Users/jasmine/jasmines_blog</span><br><span class="line">├── @upupming/hexo-renderer-markdown-it-plus@2.0.2</span><br><span class="line">├── hexo-browsersync@0.3.0</span><br><span class="line">├── hexo-deployer-git@3.0.0</span><br><span class="line">├── hexo-generator-archive@1.0.0</span><br><span class="line">├── hexo-generator-category@1.0.0</span><br><span class="line">├── hexo-generator-feed@3.0.0</span><br><span class="line">├── hexo-generator-index@2.0.0</span><br><span class="line">├── hexo-generator-sitemap@2.1.0</span><br><span class="line">├── hexo-generator-tag@1.0.0</span><br><span class="line">├── hexo-math@4.0.0</span><br><span class="line">├── hexo-renderer-ejs@1.0.0</span><br><span class="line">├── hexo-renderer-jade@0.5.0</span><br><span class="line">├── hexo-renderer-stylus@2.0.1</span><br><span class="line">├── hexo-server@2.0.0</span><br><span class="line">└── hexo@5.4.0</span><br></pre></td></tr></table></figure><ol><li><code>hexo-renderer-markdown-it-plus</code> 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 <code>hexo-renderer-marked</code> 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。</li><li><code>hexo-browsersync</code> 这个应该是 hexo 自带的一个插件。如同字面意思，这个插件会在你的<code>hexo server</code>启动后，当你进行了任何文件上的更改时，实时地在浏览器端口，重新加载新的内容，帮助你实时编辑并查看效果。</li><li><code>hexo-deployer-git</code> 这是一个需要手动安装的插件，可以通过 <code>hexo deploy --git</code> 命令帮助将hexo生成的静态文件上传至 github page。</li><li><code>hexo-generator-xxx</code> 这一块是负责特定页面的生成器，比如archieve就对应 <code>hexo-generator-archieve</code>。每个生成器大体作用是在接受到用户端的请求的时候，通过重建路由，更新页面的内容。（官方文档里只有很短的一行字：根据处理后的原始文件建立路由）。</li><li><code>hexo-renderer-xxx</code> hexo负责渲染页面的渲染器，大体理解是将markdown里的标记翻译为html的页面。</li><li><code>hexo-server</code> 这也是一个需要手动安装的插件，它可以帮助你在本地端口查看编辑好的页面。使用方法是在终端输入 <code>hexo server</code> 命令。</li><li><code>hexo</code> 本体，提供了<code>hexo</code>的核心以及所有的api，更多内容参看官方文档。目前我对node.js和前后端的整体工作流程还没有了解，大概还要很久才能真正掌握这里的内容，理解hexo是如何工作的。</li></ol>]]></content>
     
     
       
@@ -36,19 +36,19 @@
     
     
     
-    <category term="编程" scheme="http://alkikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="http://aikikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="hexo 配置手册" scheme="http://alkikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/"/>
+    <category term="hexo 配置手册" scheme="http://aikikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/"/>
     
     
-    <category term="A bored begining" scheme="http://alkikaze.github.io/Jasmine_blog/tags/A-bored-begining/"/>
+    <category term="A bored begining" scheme="http://aikikaze.github.io/Jasmine_blog/tags/A-bored-begining/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://alkikaze.github.io/Jasmine_blog/2021/09/26/hello-world/"/>
-    <id>http://alkikaze.github.io/Jasmine_blog/2021/09/26/hello-world/</id>
+    <link href="http://aikikaze.github.io/Jasmine_blog/2021/09/26/hello-world/"/>
+    <id>http://aikikaze.github.io/Jasmine_blog/2021/09/26/hello-world/</id>
     <published>2021-09-25T16:00:00.000Z</published>
     <updated>2021-09-29T16:19:28.927Z</updated>
     
