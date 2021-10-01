@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/2021/09/26/my-new-article/</loc>
+    <loc>http://www.wenwenziy.live/2021/09/26/my-new-article/</loc>
     
     <lastmod>2021-09-30</lastmod>
     
   </url>
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/2021/09/26/hello-world/</loc>
+    <loc>http://www.wenwenziy.live/2021/09/26/hello-world/</loc>
     
     <lastmod>2021-09-29</lastmod>
     
   </url>
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/categories/index.html</loc>
+    <loc>http://www.wenwenziy.live/categories/index.html</loc>
     
     <lastmod>2021-09-29</lastmod>
     
   </url>
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/tags/index.html</loc>
+    <loc>http://www.wenwenziy.live/tags/index.html</loc>
     
     <lastmod>2021-09-29</lastmod>
     
@@ -31,7 +31,7 @@
   
 
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog</loc>
+    <loc>http://www.wenwenziy.live/</loc>
     <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -39,7 +39,7 @@
 
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/tags/A-bored-begining/</loc>
+    <loc>http://www.wenwenziy.live/tags/A-bored-begining/</loc>
     <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -48,14 +48,14 @@
 
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>http://www.wenwenziy.live/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://aikikaze.github.io/Jasmine_blog/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</loc>
+    <loc>http://www.wenwenziy.live/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
