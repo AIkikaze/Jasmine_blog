@@ -1168,7 +1168,11 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
+<<<<<<< HEAD
   background: #b09ac1;
+=======
+  background: #2a1ad0;
+>>>>>>> 28a771c (10.7更新)
   border-radius: 50%;
   content: ' ';
   display: inline-block;

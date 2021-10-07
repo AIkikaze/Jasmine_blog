@@ -1,9 +1,13 @@
 # Site
-title: Jasmine's Blog
+title: 爱思考的文文子
 subtitle: 'Blogging to Collect Parts of My Life'
 description: 'learn, read and connect with you'
 keywords: Blog
+<<<<<<< HEAD
 author: wenwenziy
+=======
+author: 文文子
+>>>>>>> 28a771c (10.7更新)
 language: zh-Hans
 timezone: 'Asia/Shanghai'
 
@@ -11,7 +15,11 @@ timezone: 'Asia/Shanghai'
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://www.wenwenziy.live
 root: /
+<<<<<<< HEAD
 permalink: :year/:month/:day/:title/
+=======
+permalink: :year/:month/:name/
+>>>>>>> 28a771c (10.7更新)
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -28,7 +36,7 @@ i18n_dir: :lang
 skip_render: CNAME
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year/:month/:title.md # File name of new posts
 auto_spacing: false
 default_layout: post
 titlecase: false # Transform title into titlecase
@@ -101,8 +109,9 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/AIkikaze/Alkikaze.github.io.git
+  repo: https://github.com/AIkikaze/Jasmine_blog.git
   branch: master
+
   message: # 提交信息可以自定义，不填的则默认为提交时间
 
 # markdown-it-plus config 

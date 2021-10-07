@@ -2,28 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+<<<<<<< HEAD
     <loc>http://www.wenwenziy.live/2021/09/26/my-new-article/</loc>
+=======
+    <loc>http://www.wenwenziy.live/2021/10/%E8%87%B4%E6%97%A0%E6%B3%95%E5%BF%98%E6%80%80%E5%92%8C%E7%BB%88%E5%B0%86%E5%BF%98%E5%8D%B4%E7%9A%84/</loc>
+>>>>>>> 28a771c (10.7更新)
     
-    <lastmod>2021-09-30</lastmod>
+    <lastmod>2021-10-07</lastmod>
     
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://www.wenwenziy.live/2021/09/26/hello-world/</loc>
+=======
+    <loc>http://www.wenwenziy.live/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</loc>
+>>>>>>> 28a771c (10.7更新)
     
-    <lastmod>2021-09-29</lastmod>
+    <lastmod>2021-10-07</lastmod>
     
   </url>
   
   <url>
+<<<<<<< HEAD
+    <loc>http://www.wenwenziy.live/categories/index.html</loc>
+=======
+    <loc>http://www.wenwenziy.live/2021/09/2021-9-my-new-article/</loc>
+>>>>>>> 28a771c (10.7更新)
+    
+    <lastmod>2021-10-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/2021/10/%E6%A6%82%E5%BF%B5%E9%9B%86/</loc>
+    
+    <lastmod>2021-10-07</lastmod>
+    
+  </url>
+  
+  <url>
+<<<<<<< HEAD
+    <loc>http://www.wenwenziy.live/tags/index.html</loc>
+=======
     <loc>http://www.wenwenziy.live/categories/index.html</loc>
     
-    <lastmod>2021-09-29</lastmod>
+    <lastmod>2021-10-01</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.wenwenziy.live/tags/index.html</loc>
+    
+    <lastmod>2021-10-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/2021/09/hello-world/</loc>
+>>>>>>> 28a771c (10.7更新)
     
     <lastmod>2021-09-29</lastmod>
     
@@ -32,7 +69,11 @@
 
   <url>
     <loc>http://www.wenwenziy.live/</loc>
+<<<<<<< HEAD
     <lastmod>2021-10-01</lastmod>
+=======
+    <lastmod>2021-10-07</lastmod>
+>>>>>>> 28a771c (10.7更新)
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -40,7 +81,25 @@
   
   <url>
     <loc>http://www.wenwenziy.live/tags/A-bored-begining/</loc>
+<<<<<<< HEAD
     <lastmod>2021-10-01</lastmod>
+=======
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/tags/Day-day-up/</loc>
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/tags/%E5%B0%91%E5%B9%B4%E5%B0%91%E5%A5%B3%E7%9A%84%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2021-10-07</lastmod>
+>>>>>>> 28a771c (10.7更新)
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -49,14 +108,50 @@
   
   <url>
     <loc>http://www.wenwenziy.live/categories/%E7%BC%96%E7%A8%8B/</loc>
+<<<<<<< HEAD
     <lastmod>2021-10-01</lastmod>
+=======
+    <lastmod>2021-10-07</lastmod>
+>>>>>>> 28a771c (10.7更新)
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.wenwenziy.live/categories/%E7%BC%96%E7%A8%8B/hexo-%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/</loc>
+<<<<<<< HEAD
     <lastmod>2021-10-01</lastmod>
+=======
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/categories/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/categories/%E6%A6%82%E5%BF%B5%E9%9B%86/</loc>
+    <lastmod>2021-10-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.wenwenziy.live/categories/%E6%A6%82%E5%BF%B5%E9%9B%86/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-10-07</lastmod>
+>>>>>>> 28a771c (10.7更新)
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

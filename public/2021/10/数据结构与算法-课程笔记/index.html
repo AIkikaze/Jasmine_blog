@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.wenwenziy.live","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数据结构与算法  什么是数据结构？ 要理解数据结构，首先从目的、功能的角度看。计算机要解决一个具体的问题，大致需要经过如下几个步骤：  分析问题，确定数据模型 设计相应的算法 编写程序，运行并调试，直至得到正确的结果  这里提出了一个概念叫做 数据模型 。作为一个数学系应用数学专业的学生，我一个想到的是既然都叫做模型，那么数据模型和数学模型有什么异同呢？ 首先一个最令人困惑的问题是数学、数据，这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法-课程笔记">
+<meta property="og:url" content="http://www.wenwenziy.live/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="爱思考的文文子">
+<meta property="og:description" content="数据结构与算法  什么是数据结构？ 要理解数据结构，首先从目的、功能的角度看。计算机要解决一个具体的问题，大致需要经过如下几个步骤：  分析问题，确定数据模型 设计相应的算法 编写程序，运行并调试，直至得到正确的结果  这里提出了一个概念叫做 数据模型 。作为一个数学系应用数学专业的学生，我一个想到的是既然都叫做模型，那么数据模型和数学模型有什么异同呢？ 首先一个最令人困惑的问题是数学、数据，这">
+<meta property="og:locale">
+<meta property="og:image" content="https://picofwwzy-1307689287.cos.ap-shanghai.myqcloud.com/uPic/20211003.png">
+<meta property="article:published_time" content="2021-10-03T04:30:11.000Z">
+<meta property="article:modified_time" content="2021-10-07T11:46:57.624Z">
+<meta property="article:author" content="文文子">
+<meta property="article:tag" content="Day day up">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picofwwzy-1307689287.cos.ap-shanghai.myqcloud.com/uPic/20211003.png">
+
+<link rel="canonical" href="http://www.wenwenziy.live/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>数据结构与算法-课程笔记 | 爱思考的文文子</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="爱思考的文文子" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">爱思考的文文子</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Blogging to Collect Parts of My Life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://www.wenwenziy.live/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="文文子">
+      <meta itemprop="description" content="learn, read and connect with you">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱思考的文文子">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构与算法-课程笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-10-03 12:30:11" itemprop="dateCreated datePublished" datetime="2021-10-03T12:30:11+08:00">2021-10-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-07 19:46:57" itemprop="dateModified" datetime="2021-10-07T19:46:57+08:00">2021-10-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据结构与算法"><a class="markdownIt-Anchor" href="#数据结构与算法"></a> 数据结构与算法</h1>
+<h2 id="什么是数据结构"><a class="markdownIt-Anchor" href="#什么是数据结构"></a> 什么是数据结构？</h2>
+<p>要理解数据结构，首先从目的、功能的角度看。计算机要解决一个具体的问题，大致需要经过如下几个步骤：</p>
+<ol>
+<li>分析问题，确定数据模型</li>
+<li>设计相应的算法</li>
+<li>编写程序，运行并调试，直至得到正确的结果</li>
+</ol>
+<p>这里提出了一个概念叫做 <strong>数据模型</strong> 。作为一个数学系应用数学专业的学生，我一个想到的是既然都叫做模型，那么数据模型和数学模型有什么异同呢？</p>
+<p>首先一个最令人困惑的问题是数学、数据，这两个词到底有什么区别？（我最近比较喜欢用这种分析语义语词的方式理解问题）。参考百度上的解释：</p>
+<ul>
+<li><strong>数学</strong> 作为学科，其目的在于研究数量、结构、变化、空间以及信息等概念。作为思维方法，是人类对事物的抽象结构与模式进行严格描述的一种通用手段。</li>
+<li><em>与其说是通用手段，不如说每每当人类将问题给抽象化，特征化，便无可避免地使用（亦或是发明）某种“数学”</em>。</li>
+<li><strong>数据</strong> 作为类，是指对客观事件进行记录并可以鉴别的符号，是对客观事物的逻辑归纳。数据经过加工和处理成为可被解读的信息。</li>
+</ul>
+<span id="more"></span>
+<p>至此，我觉得可以给出一个更加清晰的定义：数学是对世界的抽象化，而数据是对世界的符号化。数学抽象的结果最终表现一整套的数学理论（由公理，命题和论证组成），而数据符号化的结构最终表现为符号以及符号之间关系构成的集合与现实世界的对应关系（如计算机中的二进制mp3文件和播放出来的声音之间的关系）。</p>
+<p>在这本数据结构的教材中，数据的定义更加切实，作者非常直接了当地指出：“<strong>数据是描述客观事物的数和字符组成的集合</strong>，是所有能够被输入到计算机中，且能够被计算机处理的符号的集合”。</p>
+<p>从数据作为集合的概念延展开来，我们不难理解数据集合中的元素称为 <strong>数据项</strong>，数据集合的子集称为 <strong>数据对象</strong>，数据集合上的关系称为 <strong>数据结构</strong> 。</p>
+<p>其中，数据项是保持数据所代表含义的独立性的最小单位，例如一名学生的学号为20192025xxx，不能再进一步拆分处理，否则便会丧失其具体的含义。</p>
+<p>数据对象是保持性质相同的数据元素共同构成的集合。所谓“性质”，一般指的是这个集合中的每个元素对应地描述了一类性质相同对象，而非是在说数据元素本身有什么性质。例如ASCII编码构成的数据对象共同描述了计算机可以表示的符号和形状。</p>
+<p>数据结构是数据集合上的关系。这样的关系往往是人们通过分析现实问题认为建构出来的，与数据本身取值多少可能没有必然联系。</p>
+<p>最后一点，是数据结构的层次问题。通常来讲，数据结构包含着两方面的层次，分别是逻辑结构和存储结构，以刻画数据含义之间的逻辑关系（与具体的问题有关）和数据在计算机电子构件中的存储表示及其关系。任何对数据结构的改动，从某种意义上讲，都可以被称之为数据的 <strong>运算</strong>，由于数据结构的不同层次，运算既可以是更改数据在计算机中的存储关系的各种操作，也可以是对现实事物之间关系的刻画。</p>
+<h3 id="逻辑结构及其表示"><a class="markdownIt-Anchor" href="#逻辑结构及其表示"></a> 逻辑结构及其表示</h3>
+<p>在现实世界中数据元素之间关系是多种多样的，但在数据结构中主要讨论数据之间的相邻关系或者邻接关系。</p>
+<h4 id="逻辑结构的分类"><a class="markdownIt-Anchor" href="#逻辑结构的分类"></a> 逻辑结构的分类</h4>
+<p>按类型划分，我们对数据的逻辑结构作归纳，无外乎如下几类：</p>
+<dl>
+<dt>1.<strong>集合</strong></dt>
+<dd>集合是指数据元素之间除了属于同一个集合的关系之外，再没有其他关系的集合。</dd>
+<dt>2.<strong>线性结构</strong></dt>
+<dd>线性结构(linear structure)是指该结构中的数据元素之间存在一对一的关系。其特点是除了唯二两个起点和终点仅有一个唯一的前驱（或后继）以外，其余的每一个数据元素均各有一个前驱元素和后继元素。</dd>
+<dt>3.<strong>树形结构</strong></dt>
+<dd>树形结构是指该结构中的数据元素存在一对多的关系，除了为唯一一个顶点没有前驱元素，以及树叶节点没有后继元素外，其余每一d个数据元素均有一个前驱元素以及至少一个后继元素。</dd>
+<dt>4.<strong>图形结构</strong></dt>
+<dd>图形结构是指该结构中数据元素之间存在多对多的关系，每个数据元素的前驱和后继的个数可以使任意的。</dd>
+</dl>
+<h4 id="逻辑结构的表示"><a class="markdownIt-Anchor" href="#逻辑结构的表示"></a> 逻辑结构的表示</h4>
+<dl>
+<dt>（1） 图表表示</dt>
+<dd>图表表示就是直接按顺序编号，把数据项在一张表格中列出来。例如：</dd>
+</dl>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">学号</th>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">性别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">张斌</td>
+<td style="text-align:center">男</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">刘丽</td>
+<td style="text-align:center">女</td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center">李英</td>
+<td style="text-align:center">女</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">陈华</td>
+<td style="text-align:center">男</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>（2） 集合（二元组）表示</dt>
+<dd>我们称一个元素集合和一个关系二元关系集合构成一个逻辑结构的二元组，一个二元组的表示如下：</dd>
+</dl>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>=</mo><mo stretchy="false">(</mo><mi>D</mi><mo separator="true">,</mo><mi>R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">B=(D,R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mclose">)</span></span></span></span></p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 为数据项构成的集合，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> 为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 上的二元关系集合。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mo stretchy="false">{</mo><mi>d</mi><mi mathvariant="normal">_</mi><mi>i</mi><mi mathvariant="normal">∣</mi><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">D=\{d\_i | 1 \le i \le n, n \ge 0 \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mopen">{</span><span class="mord mathdefault">d</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">i</span><span class="mord">∣</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>=</mo><mo stretchy="false">{</mo><mi>r</mi><mi mathvariant="normal">_</mi><mi>j</mi><mi mathvariant="normal">∣</mi><mn>1</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>m</mi><mo separator="true">,</mo><mi>m</mi><mo>≥</mo><mn>0</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">R = \{r\_j | 1 \le j \le m, m \ge 0 \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mopen">{</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord">∣</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">_</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">d\_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">d</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">i</span></span></span></span> 表示集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 中的第 i 个元素，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 中元素的个数。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi mathvariant="normal">_</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">r\_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9695199999999999em;vertical-align:-0.31em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">i</span></span></span></span> 表示集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 中的第i种关系，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> 中的关系个数。对于关系集合<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi mathvariant="normal">_</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">r\_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9695199999999999em;vertical-align:-0.31em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">i</span></span></span></span> 来说，集合中的每一个元素为 \<x,y\>, x,y \in D 代表元素x<br />
+与元素y之间存在相邻关系（&lt;前驱，后继&gt;）。</p>
+<dl>
+<dt>（3）图形表示</dt>
+<dd>简单地用一个圆圈+数字来表示节点，用箭头来表示相邻关系。可以做出如下的图形</dd>
+</dl>
+<p><img src="https://picofwwzy-1307689287.cos.ap-shanghai.myqcloud.com/uPic/20211003.png" alt="20211003" /></p>
+<p>其二元组表示为：</p>
+ \begin{aligned}
+& B = \{ 25, 36, 48, 57, 64, 82, 75 \} \\ 
+& D = \{ r\_1, r\_2 \} \\
+& r\_1 = \{ \<48,25\>, \<25,36\>, \<48,64\>, \<64,57\>, \<64,82\>, \<82,75\> \}\\
+& r\_2 = \{ \<25,36\>, \<36,48\>, \<48,57\>, \<57,64\>, \<64,75\>, \<74,82\> \} 
+\end{aligned} 
+<h3 id="存储结构"><a class="markdownIt-Anchor" href="#存储结构"></a> 存储结构</h3>
+<p>在实际应用中，数据结构的存储方法是灵活多样的，归纳起来，数据结构中有以下4中常用的存储结构类型。</p>
+<h4 id="顺序存储结构"><a class="markdownIt-Anchor" href="#顺序存储结构"></a> 顺序存储结构</h4>
+<p>顺序存储结构（sequential storage structure）是采用一组连续的存储单元存放所有的数据元素。数据元素不仅在逻辑结构中相邻，由于顺序存储的方式，其在存储其中的存储位置也相邻。</p>
+<p><em>优点</em>：存储效率高，可以实现对元素的随机存取。</p>
+<p><em>缺点</em>：不便于数据修改，对元素的插入和删除操作可能需要移动一系列的元素。</p>
+<h4 id="链式存储结构"><a class="markdownIt-Anchor" href="#链式存储结构"></a> 链式存储结构</h4>
+<p>在链式存储结构（linked storge structure）中，每个逻辑元素单独分配一个内存节点，所有节点的内存地址是间断的，通过每个节点的附加指针连接起来，最终将所有的逻辑元素链接起来。</p>
+<p><em>优点</em> ：方便数据修改（只需要修改前后节点的指针）。</p>
+<p><em>缺点</em> ：不能对存储节点进行随机存取，存储效率相比顺序存储减半。</p>
+<h4 id="索引存储结构"><a class="markdownIt-Anchor" href="#索引存储结构"></a> 索引存储结构</h4>
+<p>索引存储结构（indexed storge structure）是指在存储元素信息的同时还建立附加的索引表。索引表中每一项称为索引项，其一般形式为“关键字，地址”，关键词用于标识某个特定元素，地址用于记录该元素的内存地址。通常为了便于查询，索引表中所有索引项是按关键字有序排列的。</p>
+<p><em>优点</em> ：查找效率高</p>
+<p><em>缺点</em> ：建立了索引表，增加了空间开销</p>
+<h4 id="哈系或散列存储结构"><a class="markdownIt-Anchor" href="#哈系或散列存储结构"></a> 哈系（或散列）存储结构</h4>
+<p>哈系存储结构（hashed storge structure）的基本思想是根据元素的关键字通过哈系函数直接计算出一个值，并将这个值作为该元素的存储地址。</p>
+<p><em>优点</em> ：查找速度快，能够对元素进行快速的查找和插入</p>
+<p><em>缺点</em> ：只存储元素的数据，不存储元素之间的逻辑关系（没有简便的方法以任何一种顺序遍历表中的数据项)；基于数组的哈系表，不便于扩展，在数组基本被填满后性能下降得非常严重</p>
+<h3 id="数据运算"><a class="markdownIt-Anchor" href="#数据运算"></a> 数据运算</h3>
+<p>数据运算是指对数据实施的操作。每种数据结构都有一组相应的运算，最常用的运算有检索、插入、删除、更新和排序等。数据运算最终需要在对应的存储结构上以特定的算法实现。</p>
+<p>值得注意的一点是，运算的定义是基于逻辑结构层面，出于人们对解决现实问题的需要抽象出来的特定功能或者方法。运算的实现是基于存储结构层面，是依靠算法对具体的存储单元进行编程操作实现的。</p>
+<p>运算之所有被分为这两种层面，我想，一方面虽然按书上说的“体现了软件工程的思想”，另一方面也导致了程序用户和程序员之间的分裂，使得一般的用户无法接触到程序内部的细节，只能被动地使用程序定义好的功能，而不能主动地凭自己的意见作修改。如果有那么一天，现实计算机的存储方式能够更加适合人类看待问题的方式，在迎合逻辑结构的同时，不再需要结构复杂的算法（才能保证稳定和效率）就能解决所有的问题，那么这里运算的两种层次的分裂将为被弥合。我想，届时人类可以利用计算机做到更多有趣的事情？</p>
+<h3 id="数据类型和抽象数据类型"><a class="markdownIt-Anchor" href="#数据类型和抽象数据类型"></a> 数据类型和抽象数据类型</h3>
+<p>这一部分还是自己在实践中掌握比较好</p>
+<h2 id="算法及其描述"><a class="markdownIt-Anchor" href="#算法及其描述"></a> 算法及其描述</h2>
+<h3 id="什么是算法"><a class="markdownIt-Anchor" href="#什么是算法"></a> 什么是算法？</h3>
+<p>算法（algorithm）是对特定问题求解步骤的一种描述，它是指令有限的序列。其中每条指令代表计算机的一个或者多个操作。</p>
+<p>一个算法应该具有一下5中重要的特性：</p>
+<ol>
+<li>有穷性：一个算法必须在有限步骤内完成。</li>
+<li>确定性：对于每种情况执行的操作的都是确定的，即使说相同的输入总应该有同样的输出。</li>
+<li>可行性：算法可以通过计算机基本操作的有限次组合来完成，否则计算机无法实现。</li>
+<li>有输入：作为算法加工对象的量值，通常体现为一组变量，这是不可或缺的（可能程序员可以不要求任何变量的输入，但一个算法总是有特定加工处理的对象，比如void函数体内部的变量）。</li>
+<li>有输出：作为算法对信息进行处理加工后的结构，一个算法有一个或者多个输出。</li>
+</ol>
+<p><em>算法输入和输出的特定关系构成了算法的功能</em>.</p>
+<h3 id="算法设计的目标"><a class="markdownIt-Anchor" href="#算法设计的目标"></a> 算法设计的目标</h3>
+<ol>
+<li>正确性：算法能够正确地执行预先设定的功能和性能要求。这是最最基本的要求。</li>
+<li>可实用性：要求程序能够方便地被使用，也称为用户友好性。</li>
+<li>可读性：算法应该易于理解，这要求的算法的逻辑必须是清晰的、简单的和结构化的。</li>
+<li>健壮性：要求算法具有较好的容错性，即提供异常处理。</li>
+<li>高性能和低存储需求：要求尽可能节省算法时间和空间的开销。</li>
+</ol>
+<h3 id="算法描述"><a class="markdownIt-Anchor" href="#算法描述"></a> 算法描述</h3>
+<p>简单介绍一下应该是有5种方法，可以用来描述一个确定的算法：</p>
+<ol>
+<li>自然语言：可以直接以通俗形象的语言来描述算法，尽管会丧失一定的严谨准确性。</li>
+<li>流程图：适合顺序、循环结构的算法，不是具有递归结构的算法</li>
+<li>伪代码：结合自然语言和程序语言，比较容易理解。</li>
+<li>程序语言：最直接的描述方法</li>
+<li>调用流程：以程序中函数为单位来描述算法的方法，适合一些复杂工程，也可以用来分析递归算法的成效。</li>
+</ol>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<h3 id="什么是算法分析"><a class="markdownIt-Anchor" href="#什么是算法分析"></a> 什么是算法分析？</h3>
+<p>算法分析就是分析算法占用计算机资源的多少。而计算机资源主要是CPU时间和内存空间，因此算法分析又分为时间性能分析和空间性能分析。</p>
+<h3 id="算法时间性能分析"><a class="markdownIt-Anchor" href="#算法时间性能分析"></a> 算法时间性能分析</h3>
+<p>一般来说，有两种衡量算法时间性能的方法，即事后统计法和事前估计法。（按字面意思就很好理解）</p>
+<p>而在设计算法的过程最常用的是事前估计的方法，一般我们称之为算法的时间复杂度分析。</p>
+<p>算法的时间复杂度分析一般分为两步（熟练的Oier大概可以之间看出来，<br />
+不过对于涉及递归的算法，分析起来可能有一些困难）：第一步，首先，假设算法的问题规模为n，以程序的每一条语句为单位，为不同类型的语句设定一个耗时量，考虑每条语句的运行次数，最后将这些时间统计起来。如果追求精细，可以了解一下C/C++语言运行赋值语句，声明语句，运算语句的耗时（例如：<code>getchar()</code>, <code>printf()</code>, <code>cin</code>这三类输入语句其实有很大的性能差距，很多OIer为追求几十毫秒的性能，甚至会自己为程序写一个快速读入、输出函数来优化性能）。反之，如果仅仅是粗略分析一下，时间复杂度的量级，可以仅仅统计循环结构中的语句和执行次数并且不考虑不同语句的执行效率一视同仁地记为单位1即可。</p>
+<p>第二步是将计算得到的时间函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span> 进一步略去其低阶项和常数，仅考虑时间增长趋势的一个上界。例如：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>2</mn><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T(n) = 2n^2 + 2n + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 这是我们可以直接取为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 。（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(f(x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> 是同阶无穷大的意思）</p>
+<h3 id="算法的空间性能分析"><a class="markdownIt-Anchor" href="#算法的空间性能分析"></a> 算法的空间性能分析</h3>
+<p>这部分由于书上介绍的比较简单，我也不想再过多介绍。一般，只要熟悉了程序中各个变量的生命（什么时候获取空间，什么时候释放空间），就足够分析清楚算法的空间复杂度了。</p>
+<h2 id="数据结构算法程序"><a class="markdownIt-Anchor" href="#数据结构算法程序"></a> 数据结构+算法=程序</h2>
+<ul>
+<li><a href="/2021/10/1238/index.html">在本书中提到的概念</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Day-day-up/" rel="tag"># Day day up</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/%E6%A6%82%E5%BF%B5%E9%9B%86/" rel="prev" title="概念集">
+      <i class="fa fa-chevron-left"></i> 概念集
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/%E8%87%B4%E6%97%A0%E6%B3%95%E5%BF%98%E6%80%80%E5%92%8C%E7%BB%88%E5%B0%86%E5%BF%98%E5%8D%B4%E7%9A%84/" rel="next" title="致无法忘怀和终将忘却的">
+      致无法忘怀和终将忘却的 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text"> 什么是数据结构？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E5%8F%8A%E5%85%B6%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 逻辑结构及其表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.1.1.</span> <span class="nav-text"> 逻辑结构的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.1.1.2.</span> <span class="nav-text"> 逻辑结构的表示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.1.</span> <span class="nav-text"> 顺序存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.2.</span> <span class="nav-text"> 链式存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.3.</span> <span class="nav-text"> 索引存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E7%B3%BB%E6%88%96%E6%95%A3%E5%88%97%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.4.</span> <span class="nav-text"> 哈系（或散列）存储结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 数据运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 数据类型和抽象数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%8F%8A%E5%85%B6%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text"> 算法及其描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 什么是算法？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E7%9A%84%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 算法设计的目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 算法描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 什么是算法分析？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 算法时间性能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E7%A9%BA%E9%97%B4%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 算法的空间性能分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.</span> <span class="nav-text"> 数据结构+算法&#x3D;程序</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">文文子</p>
+  <div class="site-description" itemprop="description">learn, read and connect with you</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AIkikaze" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AIkikaze" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">文文子</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : '3cHo57VE5oI4vO5djeo8tw1W-gzGzoHsz',
+      appKey     : 'VJuGl39QQM8lIaQzivnsOyxc',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

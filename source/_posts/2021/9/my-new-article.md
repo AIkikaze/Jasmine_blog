@@ -9,29 +9,25 @@ tags:
 ---
 
 # 前言
-
 既然是我博客里的第一篇文章，那我就来摸索一下这里的各种功能好了。
-
 首先list一下，我的根目录里的npm清单：
 
-```
-exo-site@0.0.0 /Users/jasmine/jasmines_blog
-├── @upupming/hexo-renderer-markdown-it-plus@2.0.2
-├── hexo-browsersync@0.3.0
-├── hexo-deployer-git@3.0.0
-├── hexo-generator-archive@1.0.0
-├── hexo-generator-category@1.0.0
-├── hexo-generator-feed@3.0.0
-├── hexo-generator-index@2.0.0
-├── hexo-generator-sitemap@2.1.0
-├── hexo-generator-tag@1.0.0
-├── hexo-math@4.0.0
-├── hexo-renderer-ejs@1.0.0
-├── hexo-renderer-jade@0.5.0
-├── hexo-renderer-stylus@2.0.1
-├── hexo-server@2.0.0
-└── hexo@5.4.0
-```
+	exo-site@0.0.0 /Users/jasmine/jasmines_blog
+	├── @upupming/hexo-renderer-markdown-it-plus@2.0.2
+	├── hexo-browsersync@0.3.0
+	├── hexo-deployer-git@3.0.0
+	├── hexo-generator-archive@1.0.0
+	├── hexo-generator-category@1.0.0
+	├── hexo-generator-feed@3.0.0
+	├── hexo-generator-index@2.0.0
+	├── hexo-generator-sitemap@2.1.0
+	├── hexo-generator-tag@1.0.0
+	├── hexo-math@4.0.0
+	├── hexo-renderer-ejs@1.0.0
+	├── hexo-renderer-jade@0.5.0
+	├── hexo-renderer-stylus@2.0.1
+	├── hexo-server@2.0.0
+	└── hexo@5.4.0
 
 1. `hexo-renderer-markdown-it-plus` 为了写latex重新更换的渲染引擎。之所以要更换，是因为在网上hexo原先的 `hexo-renderer-marked` 引擎，有许多符号会和latex里的符号重复，哪怕下载了支持mathjex的插件写tex 的时候也需要加上许多转义符，故放弃。
 2. `hexo-browsersync` 这个应该是 hexo 自带的一个插件。如同字面意思，这个插件会在你的`hexo server`启动后，当你进行了任何文件上的更改时，实时地在浏览器端口，重新加载新的内容，帮助你实时编辑并查看效果。
@@ -40,3 +36,5 @@ exo-site@0.0.0 /Users/jasmine/jasmines_blog
 5. `hexo-renderer-xxx` hexo负责渲染页面的渲染器，大体理解是将markdown里的标记翻译为html的页面。
 6. `hexo-server` 这也是一个需要手动安装的插件，它可以帮助你在本地端口查看编辑好的页面。使用方法是在终端输入 `hexo server` 命令。
 7. `hexo` 本体，提供了`hexo`的核心以及所有的api，更多内容参看官方文档。目前我对node.js和前后端的整体工作流程还没有了解，大概还要很久才能真正掌握这里的内容，理解hexo是如何工作的。
+
+
